@@ -129,13 +129,13 @@ BEGIN
             );
 
             -- Logge den erfolgreichen Export
-            INSERT INTO export_log (object_name, object_type, file_path, export_status)
+            INSERT INTO DEVOPS_EXPORT_LOG (object_name, object_type, file_path, export_status)
             VALUES (rec.object_name, rec.object_type, file_path, 'SUCCESS');
 
         EXCEPTION
             WHEN OTHERS THEN
                 -- Logge den Fehler, falls ein Export fehlschlägt
-                INSERT INTO export_log (object_name, object_type, file_path, export_status)
+                INSERT INTO DEVOPS_EXPORT_LOG (object_name, object_type, file_path, export_status)
                 VALUES (rec.object_name, rec.object_type, file_path, 'FAILED');
 
                 -- Optional: RAISE zur Fehlerweitergabe
