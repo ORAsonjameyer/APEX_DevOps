@@ -31674,11 +31674,12 @@ wwv_flow_imp_page.create_page_process(
 ,p_process_name=>'Upload Apps Process'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'BEGIN',
+'  -- Aufruf der Prozedur create_branch aus dem Paket DEVOPS_MAIN, um einen neuen Branch in einem GitHub-Repository zu erstellen',
 '  DEVOPS_MAIN.export_app(',
-'    p_credname   => :P12_REPO_CREDENTIAL, ',
-'    p_reponame   => :P12_REPO_NAME, ',
-'    p_repoowner  => :P12_REPO_OWNER,',
-'    p_branchname => :P12_BRANCH_NAME',
+'    p_credname   => ''GITHUB_CRED'', ',
+'    p_reponame   => ''APEX_DEVOPS'',',
+'    p_repoowner  => ''ORAsonjameyer'',',
+'    p_branchname => ''LARA''',
 '  );',
 'END;'))
 ,p_process_clob_language=>'PLSQL'
