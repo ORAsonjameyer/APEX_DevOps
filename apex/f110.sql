@@ -33,7 +33,7 @@ prompt APPLICATION 110 - DEVOPS_V3
 -- Application Export:
 --   Application:     110
 --   Name:            DEVOPS_V3
---   Exported By:     ORASONJAMEYER
+--   Exported By:     WKSP_DEVOPS
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                     19
