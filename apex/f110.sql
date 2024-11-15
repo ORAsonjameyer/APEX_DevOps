@@ -31674,16 +31674,16 @@ wwv_flow_imp_page.create_page_process(
 ,p_process_name=>'Upload Apps Process'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'BEGIN',
-'  -- Aufruf der Prozedur create_branch aus dem Paket DEVOPS_MAIN, um einen neuen Branch in einem GitHub-Repository zu erstellen',
 '  DEVOPS_MAIN.export_app(',
-unistr('    p_credname   => :P12_REPO_CREDENTIAL,  -- Name des Cloud-Credentials, das zur Authentifizierung verwendet wird (wird von der Apex-Seite \00FCbergeben)'),
-unistr('    p_reponame   => :P12_REPO_NAME,        -- Name des GitHub-Repositories, in dem der Branch erstellt werden soll (wird von der Apex-Seite \00FCbergeben)'),
-unistr('    p_repoowner  => :P12_REPO_OWNER,       -- Besitzer des GitHub-Repositories, z. B. der Benutzername oder die Organisation (wird von der Apex-Seite \00FCbergeben)'),
+'    p_credname   => :P12_REPO_CREDENTIAL, ',
+'    p_reponame   => :P12_REPO_NAME, ',
+'    p_repoowner  => :P12_REPO_OWNER,',
 '    p_branchname => :P12_BRANCH_NAME',
 '  );',
 'END;'))
 ,p_process_clob_language=>'PLSQL'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_imp.id(19334339582157123)
 ,p_internal_uid=>8891967830164311
 );
 end;
